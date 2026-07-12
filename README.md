@@ -53,13 +53,7 @@ README
         database_diagram.png
 ```
 
-After adding the image:
 
-```markdown
-![Database Diagram](diagrams/database_diagram.png)
-```
-
----
 
 # ⚙ Technologies
 
@@ -84,12 +78,7 @@ employee-timesheet-management-system
 │
 ├── diagrams
 │   └── database_diagram.png
-│
-└── screenshots
-    ├── tables.png
-    ├── trigger.png
-    ├── view.png
-    └── json_query.png
+
 ```
 
 ---
@@ -214,35 +203,6 @@ The script automatically:
 
 ---
 
-# 🖼 Screenshots
-
-You can add screenshots such as:
-
-### Tables
-
-```markdown
-![Tables](screenshots/tables.png)
-```
-
-### View Result
-
-```markdown
-![View](screenshots/view.png)
-```
-
-### Trigger Result
-
-```markdown
-![Trigger](screenshots/trigger.png)
-```
-
-### JSON Query
-
-```markdown
-![JSON](screenshots/json_query.png)
-```
-
----
 
 # 🎯 Learning Objectives
 
