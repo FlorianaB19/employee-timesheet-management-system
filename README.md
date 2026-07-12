@@ -1,52 +1,67 @@
-# Employee Timesheet Management System
+# 🚀 Employee Timesheet Management System
 
-## Overview
+A relational database project developed using **Microsoft SQL Server** that simulates a real-world employee timesheet management system.
 
-This project implements an Employee Timesheet Management System using Microsoft SQL Server.
-
-The database was designed to simulate a real-world timesheet application used to manage employees, projects and worked hours.
+The application manages employees, departments, projects, work entries, leave requests and audit logs while demonstrating advanced SQL Server features such as JSON support, indexed views, triggers and stored procedures.
 
 ---
 
-## Features
+# 📋 Project Overview
 
-- Relational database design
-- Primary Keys
-- Foreign Keys
-- UNIQUE Constraints
-- CHECK Constraints
-- DEFAULT Constraints
-- JSON data support
-- Additional indexes
-- SQL Views
-- Indexed View (Materialized View equivalent)
-- GROUP BY queries
-- LEFT JOIN queries
-- Window Functions (DENSE_RANK)
-- Stored Procedure
-- Trigger
-- Sample data
+The purpose of this project is to design and implement a normalized relational database capable of managing employee timesheets.
+
+The implementation includes:
+
+- Employee management
+- Project management
+- Timesheet management
+- Leave management
+- Audit logging
+- JSON data storage
+- Database automation using triggers
+- Stored procedures
+- Analytical SQL queries
 
 ---
 
-## Database Entities
+# 🏗 Database Architecture
 
-The project contains the following tables:
+The database contains the following entities:
 
-- Departments
-- Employees
-- Clients
-- Projects
-- TaskCategories
-- WorkLocations
-- Timesheets
-- TimesheetEntries
-- LeaveRequests
-- AuditLogs
+| Table | Description |
+|--------|-------------|
+| Departments | Company departments |
+| Employees | Employee information |
+| Clients | External clients |
+| Projects | Company projects |
+| TaskCategories | Types of work activities |
+| WorkLocations | Office and remote locations |
+| Timesheets | Weekly employee timesheets |
+| TimesheetEntries | Individual work entries |
+| LeaveRequests | Employee leave requests |
+| AuditLogs | Audit trail generated automatically |
 
 ---
 
-## Technologies
+# 📊 Entity Relationship Diagram
+
+> Add the database diagram here after exporting it from SQL Server Management Studio.
+
+```text
+README
+└── diagrams
+        database_diagram.png
+```
+
+After adding the image:
+
+```markdown
+![Database Diagram](diagrams/database_diagram.png)
+```
+
+---
+
+# ⚙ Technologies
 
 - Microsoft SQL Server 2022
 - SQL Server Management Studio (SSMS)
@@ -57,53 +72,198 @@ The project contains the following tables:
 
 ---
 
-## Project Structure
+# 📂 Project Structure
 
 ```text
 employee-timesheet-management-system
 │
 ├── README.md
+│
 ├── sql
 │   └── TimesheetDB.sql
 │
-└── diagrams
+├── diagrams
+│   └── database_diagram.png
+│
+└── screenshots
+    ├── tables.png
+    ├── trigger.png
+    ├── view.png
+    └── json_query.png
 ```
 
 ---
 
-## Main Database Objects
+# 📈 Database Features
 
-### Tables
+## Constraints
 
-10 relational tables with integrity constraints.
-
-### View
-
-Employee worked hours summary.
-
-### Indexed View
-
-Project worked hours aggregation.
-
-### Stored Procedure
-
-Returns the total worked hours for a selected employee.
-
-### Trigger
-
-Automatically inserts an audit record whenever a new timesheet is created.
+- Primary Keys
+- Foreign Keys
+- UNIQUE
+- CHECK
+- DEFAULT
+- NOT NULL
 
 ---
 
 ## JSON Support
 
-The project stores semistructured information using JSON inside the following tables:
+The project stores semistructured data using JSON.
+
+Tables containing JSON:
 
 - TimesheetEntries
 - AuditLogs
 
+Example:
+
+```json
+{
+    "device":"Laptop",
+    "browser":"Chrome",
+    "workMode":"Remote"
+}
+```
+
 ---
 
-## Author
+## Indexes
 
-Floriana Berbecel
+Additional indexes were created to improve query performance.
+
+Examples:
+
+- Employee Last Name
+- Project Name
+- Work Date
+- Leave Status
+
+---
+
+## Views
+
+### Employee Worked Hours
+
+Displays the total worked hours for every employee.
+
+---
+
+## Indexed View
+
+Aggregates worked hours for each project.
+
+Used as the SQL Server equivalent of a Materialized View.
+
+---
+
+## Stored Procedure
+
+Returns the total worked hours for a selected employee.
+
+Example:
+
+```sql
+EXEC usp_GetEmployeeHours @EmployeeID = 5;
+```
+
+---
+
+## Trigger
+
+A trigger automatically inserts a record into the AuditLogs table whenever a new Timesheet is created.
+
+This demonstrates database-level automation and audit tracking.
+
+---
+
+# 📊 SQL Queries
+
+The project includes examples of:
+
+- GROUP BY
+- LEFT JOIN
+- INNER JOIN
+- Aggregate Functions
+- Window Functions
+- DENSE_RANK()
+- JSON_VALUE()
+
+---
+
+# ▶ Running the Project
+
+1. Open SQL Server Management Studio.
+2. Connect to your SQL Server instance.
+3. Execute:
+
+```text
+sql/TimesheetDB.sql
+```
+
+The script automatically:
+
+- creates the database
+- creates all tables
+- creates constraints
+- inserts sample data
+- creates indexes
+- creates views
+- creates stored procedures
+- creates triggers
+
+---
+
+# 🖼 Screenshots
+
+You can add screenshots such as:
+
+### Tables
+
+```markdown
+![Tables](screenshots/tables.png)
+```
+
+### View Result
+
+```markdown
+![View](screenshots/view.png)
+```
+
+### Trigger Result
+
+```markdown
+![Trigger](screenshots/trigger.png)
+```
+
+### JSON Query
+
+```markdown
+![JSON](screenshots/json_query.png)
+```
+
+---
+
+# 🎯 Learning Objectives
+
+This project demonstrates practical knowledge of:
+
+- Relational Database Design
+- SQL Server
+- Database Normalization
+- Data Integrity
+- Query Optimization
+- Database Programming
+- JSON Processing
+- Window Functions
+- Trigger Programming
+
+---
+
+# 👩‍💻 Author
+
+**Floriana Berbecel**
+
+GitHub:
+
+https://github.com/FlorianaB19
